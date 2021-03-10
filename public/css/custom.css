@@ -1,0 +1,26 @@
+body {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif !important;
+}
+.login-logo a, .register-logo a {
+    color: white !important;
+}
+.form-control {
+    border-radius: 10px;
+}
+.btn.btn-flat {
+    border-radius: 10px;
+}
+.icheckbox_square-blue {
+    border-radius: 3px;
+}
+.icheckbox_square-blue, .iradio_square-blue {
+    background: url('/vendor/laravel-admin/AdminLTE/plugins/iCheck/square/red.png') no-repeat;
+}
+.login-box-body {
+    border-radius: 20px;
+}
+.login-box-msg {
+    font-size: 20px;
+    text-transform: uppercase;
+}
