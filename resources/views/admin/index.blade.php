@@ -22,6 +22,21 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .content-header h1 {
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+        body {
+            font-family: "Tahoma" !important;
+            font-size: 12px !important;
+        }
+
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+            font-family: "Tahoma" !important;
+        }
+    </style>
+
 </head>
 
 <body class="hold-transition {{config('admin.skin')}} {{join(' ', config('admin.layout'))}}">
@@ -47,11 +62,11 @@
         {!! Admin::html() !!}
     </div>
 
-    @include('admin::partials.footer')
+    {{-- @include('admin::partials.footer') --}}
 
 </div>
 
-<button id="totop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up"></i></button>
+{{-- <button id="totop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up"></i></button> --}}
 
 <script>
     function LA() {}

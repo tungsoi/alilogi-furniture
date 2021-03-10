@@ -68,12 +68,6 @@
             </div>
             <!-- /.col -->
         </div>
-        <br>
-        <div class="row">
-            <div class="col-xs-12">
-                <h5 class="pull-right">Chưa có tài khoản? <a href="http://" class="">Đăng ký</a></h5>
-            </div>
-        </div>
         </form>
 
     </div>
