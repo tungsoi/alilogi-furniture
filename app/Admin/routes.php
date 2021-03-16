@@ -13,6 +13,7 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resources([
-        'categories'    =>  'CategoryController'
+        'categories'    =>  'CategoryController',
+        'products'      =>  'ProductController'
     ]);
 });

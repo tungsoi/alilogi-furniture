@@ -15,7 +15,7 @@ class CategoryController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Danh mục sản phẩm';
+    protected $title = 'Product Category';
 
     /**
      * Make a grid builder.
@@ -30,12 +30,12 @@ class CategoryController extends AdminController
             $row->column('number', ($row->number+1));
         });
         $grid->column('number', 'STT');
-        $grid->name('Tên danh mục')->editable();
-        $grid->parent_id('Danh mục cha')->display(function ()
+        $grid->name()->editable();
+        $grid->parent_id('Parent Category')->display(function ()
         {
             return Category::find($this->parent_id)->name ?? "";
         })->label();
-        $grid->column('items', 'Danh mục con')->display(function ()
+        $grid->column('items', 'Child Category')->display(function ()
         {
             return Category::whereParentId($this->id)->pluck('name');
         })->label();
@@ -56,12 +56,12 @@ class CategoryController extends AdminController
     {
         $show = new Show(Category::findOrFail($id));
 
-        $show->parent_id('Danh mục cha')->as(function ()
+        $show->parent_id('Parent Category')->as(function ()
         {
           return Category::find($this->parent_id)->name ?? "";
         });
-        $show->name('Tên danh mục');
-        $show->created_at('Ngày tạo');
+        $show->name();
+        $show->created_at();
 
         return $show;
     }
@@ -75,8 +75,8 @@ class CategoryController extends AdminController
     {
         $form = new Form(new Category);
 
-        $form->select('parent_id', 'Danh mục cha')->options(Category::whereNull('parent_id')->pluck('name', 'id'));
-        $form->text('name', 'Tên danh mục')->rules('required');
+        $form->select('parent_id', 'Parent Category')->options(Category::whereNull('parent_id')->pluck('name', 'id'));
+        $form->text('name')->rules('required');
 
         $form->disableEditingCheck();
         $form->disableCreatingCheck();
